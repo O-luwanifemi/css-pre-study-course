@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 html {
@@ -81,9 +82,8 @@ h1 {
 }
 
 .top-img-box > img {
-    width: 70%;
+    width: 60%;
     margin-left: 2em;
-    padding-top: 2.5em;
 }
 
 .bottom-img-box {
@@ -105,7 +105,7 @@ hr {
 /* FOOTER SECTION */
 #footer {
     text-align: center;
-    padding-top: 1.5em;
+    padding-top: 1em;
 }
 
 #footer > h2 {
@@ -129,6 +129,7 @@ hr {
 input[type="text"],
 input[type="email"],
 input[type="submit"] {
+    margin-bottom: .3em;
     display: inline-block;
     background-color: white;
     box-shadow: 3px 3px 0 0 #e4572e;
