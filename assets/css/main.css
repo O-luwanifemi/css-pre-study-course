@@ -42,6 +42,31 @@ h1 {
     background-color: #fffff2;
 }
 
+.add-and-count {
+    width: 45%;
+    text-align: center;
+    margin: 0 auto .6em auto;
+}
+
+.add-btn {
+    outline: none;
+    color: #fffff2;
+    padding: .4em;
+    width: 95%;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #050401;
+    box-shadow: 3px 3px 0 0 #e4572e;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 3px;
+    font: 1rem 'Gamja Flower', cursive;
+}
+
+.article-count {
+    margin-top: .2em;
+}
+
 .top-article,
 .bottom-article {
     width: 54%;
