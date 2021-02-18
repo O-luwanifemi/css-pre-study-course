@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Gamja+Flower&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./assets/css/main.css">
+        <script defer src="./assets/js/index.js"></script>
     </head>
 
     <body>
@@ -15,16 +16,38 @@
             <h1>Nifemi's Journal</h1>
             <h2>So fresh and so clean</h2>
         </header>
+
         <main id="main">
+            <!-- MODAL: HIDDEN BY DEFAULT -->
+            <section id="post-modal">
+                <section class="modal-body">
+                    <div>
+                        <h3>Write your note</h3>
+
+                        <span class="close">&times</span>
+                    </div>
+                    
+                    <form id="form" class="modal-form helo fhn ufnu">
+                        <input type="text" name="title" id="post-title" placeholder="Write title here">
+                    
+                        <textarea name="body" id="post-body" placeholder="Write body here"></textarea>
+
+                        <input type="submit" value="Post">
+                    </form>
+                </section>
+            </section>
+
+
             <section class="add-and-count">
                 <button class="add-btn">Add a new note</button>
-                <h3 class="article-count"></h3>
+                
+                <h3>You have <span id="article-count"></span></h3>
             </section>
 
             <article id="articles">
-                <article class="top-article">
+                <article class="article top-article">
                     <section class="top-text-content">
-                        <h2><span>13/05/23:</span> Spatulas</h2>
+                        <h2 class="journal_title"><span class="date">13/05/23:</span> Spatulas</h2>
                         <p>
                             Yesterday I went to the store and got some much-needed <a href="https://www.youtube.com/watch?v=2XbCWmY0eqY">spatulas!</a> (What better way to say I love myself than to buy myself a spatula?)
                         </p>
@@ -34,9 +57,10 @@
                         <img src="./assets/images/spatula.gif" alt="spatulas">
                     </div>
                 </article>
-                <article class="bottom-article ">
+
+                <article class="article bottom-article ">
                     <section class="bottom-text-content">
-                        <h2><span>14/05/23:</span> Cookie Monster Cupcakes</h2>
+                        <h2 class="journal_title"><span class="date">14/05/23:</span> Cookie Monster Cupcakes</h2>
                         <p>
                             My favorite cartoon character is Cookie Monster, and my favorite dessert is cupcakes, so Cookie Monster cupcakes are the best of both worlds.
                         </p>
@@ -59,9 +83,9 @@
             <h2>Stay connected</h2>
             <p>Join my mailing list.</p>
 
-            <form>
+            <form class="footer_form">
                 <input type="text" placeholder="First name">
-                <input type="email" placeholder="Email"> 
+                <input type="email" placeholder="Email">
                 <input type="submit" value="Submit">    
             </form>
 
