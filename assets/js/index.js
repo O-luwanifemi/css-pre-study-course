@@ -6,6 +6,8 @@ let form_submit = document.getElementById('form');
 let add_btn = document.querySelector(".add-btn");
 let post_count = document.getElementById("article-count");
 let articles_holder = document.getElementById("articles");
+let title = document.getElementById('post-title');
+let post_body = document.getElementById('post-body');
 
 // ----- ALL EVENT LISTENERS -----
 add_btn.addEventListener('click', showModal);
@@ -19,6 +21,9 @@ function showModal(e) {
     e.preventDefault();
 
     modal.style.display = "block";
+
+    // Points user straight where they need to get started with their post
+    title.focus();
 }
 
 // Closes the modal from the UI
@@ -30,37 +35,44 @@ function closeModal() {
 function submitPost(event) {
     event.preventDefault();
 
-    // Variables to store inputs
-    let title = document.getElementById('post-title').value;
-    let post_body = document.getElementById('post-body').value;
+    // Variables to store data
+    let post_title = title.value;
+    let post_content = post_body.value;
     let date = new Date();
 
-    if (title == '' || post_body == '') {
+    if (!post_title || !post_content) {
+
         form_submit_btn.className += " disabled";
-    }
+
+    } else {
     
-    // Setting up structure for incoming posts
-    let article = document.createElement('article');
-        article.className += "article top-article";
-        article.innerHTML = `<section class="top-text-content">
-                                <h2 class="journal_title"><span class="date">${date.toLocaleDateString("en-GB")}:</span> ${title}</h2>
-                                <p>
-                                    ${post_body}
-                                </p>
-                            </section>
+        // Setting up structure for incoming posts when inputs aren't empty
+        let article = document.createElement('article');
+            article.className += "article top-article";
+            article.innerHTML = `<section class="top-text-content">
+                                    <h2 class="journal_title"><span class="date">${date.toLocaleDateString("en-GB")}:</span> ${post_title}</h2>
+                                    <p>
+                                        ${post_content}
+                                    </p>
+                                </section>
 
-                            <div class="top-img-box">
-                                <img src="./assets/images/spatula.gif" alt="spatulas">
-                            </div>`;
+                                <div class="top-img-box">
+                                    <img src="./assets/images/spatula.gif" alt="spatulas">
+                                </div>`;
 
-    // strings together the new content
-    articles_holder.prepend(article);
+        // strings together the new content to parent
+        articles_holder.prepend(article);
 
-    // Calls for count update
-    updateArticleCount();
+        // Calls for count update
+        updateArticleCount();
 
-    // Clears out the just-posted inputs
-    document.forms['form'].reset();
+        // Closes modal
+        modal.style.display = "none";
+
+        // Clears out the just-posted inputs
+        document.forms['form'].reset();
+
+    }
 }
 
 // ----- Updating count based on number of posts on UI -----
