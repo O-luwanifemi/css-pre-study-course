@@ -136,6 +136,7 @@ h1 {
     outline: none;
     color: #fffff2;
     padding: .4em;
+    margin-bottom: .2em;
     width: 95%;
     cursor: pointer;
     display: inline-block;
@@ -147,15 +148,11 @@ h1 {
     font: 1rem 'Gamja Flower', cursive;
 }
 
-.article-count {
-    margin-top: .2em;
-}
-
-.top-article,
-.bottom-article {
+.article {
     width: 54%;
     min-height: 18vh;
     margin: 0 auto;
+    margin-bottom: 1em;
     padding: .3em;
     display: flex;
     align-items: center;
@@ -164,8 +161,12 @@ h1 {
     box-shadow: 3px 3px 0 0 #e4572e;
 }
 
-.bottom-article {
+.top-article {
     margin-top: .7em;
+}
+
+.bottom-article {
+    margin-bottom: 0;
 }
 
 .top-text-content,
@@ -286,22 +287,19 @@ hr {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 950px) {
-    .top-article,
-    .bottom-article {
+    .article {
         width: 60%;
     }
 }
 
 @media screen and (max-width: 850px) {
-    .top-article,
-    .bottom-article {
+    .article {
         width: 70%;
     }
 }
 
 @media screen and (max-width: 750px) {
-    .top-article,
-    .bottom-article {
+    .article {
         width: 80%;
     }
 }
@@ -315,8 +313,7 @@ hr {
         font-size: 1.3rem;
     }
 
-    .top-article,
-    .bottom-article {
+    .article {
         display: block;
         width: 80%;
     }
