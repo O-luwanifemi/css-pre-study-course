@@ -160,7 +160,7 @@ h1 {
     width: 54%;
     min-height: 18vh;
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: .6em;
     padding: .3em;
     display: flex;
     align-items: center;
