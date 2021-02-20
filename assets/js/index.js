@@ -77,15 +77,13 @@ function submitPost(event) {
 
 // ----- Updating count based on number of posts on UI -----
 // Setting default count, due to hard-coded articles already on screen
-post_count.textContent = "2 posts";
+post_count.textContent = "2 posts.";
 
 function updateArticleCount() {
     let articles = articles_holder.childElementCount;
 
     if (articles === 0) {
         post_count.textContent = "0 posts.";
-    } else if (articles === 1) {
-        post_count.textContent = "1 post.";
     } else {
         post_count.textContent = `${articles} posts.`;
     }
