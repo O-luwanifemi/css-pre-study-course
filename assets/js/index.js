@@ -8,6 +8,7 @@ let post_count = document.getElementById("article-count");
 let articles_holder = document.getElementById("articles");
 let title = document.getElementById('post-title');
 let post_body = document.getElementById('post-body');
+let upload_btn = document.getElementById("upload_input");
 
 // ----- ALL EVENT LISTENERS -----
 add_btn.addEventListener('click', showModal);
@@ -29,6 +30,8 @@ function showModal(e) {
 // Closes the modal from the UI
 function closeModal() {
     modal.style.display = "none";
+
+    clearInputs();
 }
 
 // Takes inputs from modal, and pushes them to the UI
@@ -38,9 +41,10 @@ function submitPost(event) {
     // Variables to store data
     let post_title = title.value;
     let post_content = post_body.value;
+    let img_upload_src = upload_btn.value;
     let date = new Date();
 
-    if (!post_title || !post_content) {
+    if (!post_title || !post_content || !img_upload_src) {
 
         form_submit_btn.className += " disabled";
 
@@ -57,7 +61,7 @@ function submitPost(event) {
                                 </section>
 
                                 <div class="top-img-box">
-                                    <img src="./assets/images/spatula.gif" alt="spatulas">
+                                    <img src="${img_upload_src}" alt="">
                                 </div>`;
 
         // strings together the new content to parent
@@ -67,10 +71,10 @@ function submitPost(event) {
         updateArticleCount();
 
         // Closes modal
-        modal.style.display = "none";
+        closeModal();
 
         // Clears out the just-posted inputs
-        document.forms['form'].reset();
+        clearInputs();
 
     }
 }
@@ -87,4 +91,9 @@ function updateArticleCount() {
     } else {
         post_count.textContent = `${articles} posts.`;
     }
+}
+
+// ----- FUNCTION FOR CLEARING INPUTS -----
+function clearInputs() {
+    document.forms['form'].reset();
 }

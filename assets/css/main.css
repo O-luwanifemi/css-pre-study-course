@@ -92,7 +92,7 @@ h1 {
 
 .modal-form > textarea {
     resize: none;
-    height: 50px;
+    min-height: 80px;
 }
 
 .modal-form > input,
@@ -110,27 +110,63 @@ h1 {
 .modal-form > textarea::placeholder {
     color: rgba(51, 51, 51, 0.719);
     font: .7rem sans-serif;
+    font-style: italic;
+}
+
+.modal-form > .upload_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload_box > .upload_label {
+    font: .6rem sans-serif;
+    font-weight: bold;
+}
+
+.upload_box > input[type="file"] {
+    width: 70%;
+    cursor: pointer;
+    margin-left: .4em;
+    border-radius: 3px;
+    font: .7rem sans-serif;
+    border: 1px solid rgba(51, 51, 51, 0.39);
+}
+
+/* STYLING THE INPUT FILE BUTTON */
+.upload_box > input[type="file"]::-webkit-file-upload-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: rgba(12, 12, 12, 0.897);
+    border-right: 1px solid rgba(14, 14, 14, 0.39);
+}
+
+.upload_box > input[type="file"]:hover {
+    border: 1px solid rgba(139, 69, 19, 0.747);
 }
 
 .modal-form > input[type="submit"] {
-    width: 35%;
+    width: 27%;
     cursor: pointer;
-    padding: 1em 0;
+    margin-top: 1em;
+    padding: 1.2em 0;
     font: .6rem sans-serif;
     font-weight: bold;
     outline: none;
     border-radius: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.678);
+    border: 1px solid rgba(0, 0, 0, 0.466);
     text-transform: uppercase;
     transition: all .2s;
 }
 
-.modal-form > input[type="submit"]:hover {
+/* REMEMBER TO USE JS TO STYLE THE BUTTON, SO THAT WHEN INPUTS ARE FILLED, BUTTON BECOMES LIVE. */
+/* .modal-form > input[type="submit"]:hover {
     background-color: #e4572e;
     color: white;
-    margin-top: .3em;
-    border: 2px solid rgba(0, 0, 0, 0.842);
-}
+    border: 1px solid rgb(0, 0, 0);
+} */
 
 /* Counter and add post button */
 .add-and-count {
