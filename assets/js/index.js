@@ -8,7 +8,7 @@ let post_count = document.getElementById("article-count");
 let articles_holder = document.getElementById("articles");
 let title = document.getElementById('post-title');
 let post_body = document.getElementById('post-body');
-let upload_btn = document.getElementById("upload_input");
+let img_upload = document.getElementById('img_input');
 
 // ----- ALL EVENT LISTENERS -----
 add_btn.addEventListener('click', showModal);
@@ -41,7 +41,7 @@ function submitPost(event) {
     // Variables to store data
     let post_title = title.value;
     let post_content = post_body.value;
-    let img_upload_src = upload_btn.value;
+    let img_upload_src = img_upload.value;
     let date = new Date();
 
     if (!post_title || !post_content || !img_upload_src) {
@@ -60,7 +60,7 @@ function submitPost(event) {
                                     </p>
                                 </section>
 
-                                <div class="top-img-box">
+                                <div class="new-img-box">
                                     <img src="${img_upload_src}" alt="">
                                 </div>`;
 

@@ -113,38 +113,12 @@ h1 {
     font-style: italic;
 }
 
-.modal-form > .upload_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.upload_box > .upload_label {
-    font: .6rem sans-serif;
-    font-weight: bold;
-}
-
-.upload_box > input[type="file"] {
-    width: 70%;
-    cursor: pointer;
-    margin-left: .4em;
-    border-radius: 3px;
-    font: .7rem sans-serif;
-    border: 1px solid rgba(51, 51, 51, 0.39);
-}
-
-/* STYLING THE INPUT FILE BUTTON */
-.upload_box > input[type="file"]::-webkit-file-upload-button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: transparent;
-    color: rgba(12, 12, 12, 0.897);
-    border-right: 1px solid rgba(14, 14, 14, 0.39);
-}
-
-.upload_box > input[type="file"]:hover {
-    border: 1px solid rgba(139, 69, 19, 0.747);
+.modal-form > #img_input {
+    width: 65%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-bottom: .8em;
 }
 
 .modal-form > input[type="submit"] {
@@ -162,11 +136,11 @@ h1 {
 }
 
 /* REMEMBER TO USE JS TO STYLE THE BUTTON, SO THAT WHEN INPUTS ARE FILLED, BUTTON BECOMES LIVE. */
-/* .modal-form > input[type="submit"]:hover {
+.modal-form > input[type="submit"]:hover {
     background-color: #e4572e;
     color: white;
     border: 1px solid rgb(0, 0, 0);
-} */
+}
 
 /* Counter and add post button */
 .add-and-count {
@@ -230,7 +204,7 @@ h1 {
 }
 
 .top-img-box {
-    width: 19%;
+    width: 20%;
     display: flex;
     align-items: flex-end;
 }
@@ -241,12 +215,23 @@ h1 {
 }
 
 .bottom-img-box {
-    width: 32%;
+    width: 25%;
+    margin: 0 0 0 13px;
     display: flex;
     align-items: center;
 }
 
 .bottom-img-box > img {
+    width: 100%;
+}
+
+.new-img-box {
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.new-img-box > img {
     width: 100%;
 }
 
